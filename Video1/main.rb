@@ -16,6 +16,12 @@ class Game < Gosu::Window
             close
         end
     end
+
+    def update
+    end
+  
+    def draw
+    end
 end
 
 Game.new.show

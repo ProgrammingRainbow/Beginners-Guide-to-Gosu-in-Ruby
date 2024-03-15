@@ -22,6 +22,9 @@ class Game < Gosu::Window
         end
     end
 
+    def update()
+    end
+
     def draw
         Gosu.draw_rect(0, 0, self.width, self.height, @bg_color)
         @background.draw(0, 0)
