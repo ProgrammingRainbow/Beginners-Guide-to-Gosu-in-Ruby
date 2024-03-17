@@ -10,7 +10,7 @@ class Game < Gosu::Window
         self.caption = TITLE
 
         @background = Gosu::Image.new("images/background.png")
-        @bg_color = Gosu::Color.new(0, 0, 0)
+        @bg_color = Gosu::Color.new(255, 0, 0, 0)
 
         @text = Gosu::Image.from_text("Gosu", 80, font: "fonts/freesansbold.ttf")
         @text_x = 0

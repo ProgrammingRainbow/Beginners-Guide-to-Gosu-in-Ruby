@@ -10,7 +10,7 @@ class Game < Gosu::Window
         self.caption = TITLE
 
         @background = Gosu::Image.new("images/background.png")
-        @bg_color = Gosu::Color.new(0, 0, 0)
+        @bg_color = Gosu::Color.new(255, 0, 0, 0)
 
         @text = Gosu::Image.from_text("Gosu", 80, font: "fonts/freesansbold.ttf")
         @text_x = 0
@@ -44,7 +44,7 @@ class Game < Gosu::Window
     def draw
         Gosu.draw_rect(0, 0, self.width, self.height, @bg_color)
         @background.draw(0, 0)
-        @text.draw(@text_x, @text_y)
+        @text.draw(@text_x,@text_y)
         @sprite.draw(@sprite_x, @sprite_y)
     end
 
@@ -70,16 +70,16 @@ class Game < Gosu::Window
     end
 
     def update_sprite
-        if Gosu.button_down?(Gosu::KB_LEFT)
+        if Gosu.button_down?(Gosu::KB_LEFT) or Gosu.button_down?(Gosu::KB_A)
             @sprite_x -= @sprite_vel
         end
-        if Gosu.button_down?(Gosu::KB_RIGHT)
+        if Gosu.button_down?(Gosu::KB_RIGHT) or Gosu.button_down?(Gosu::KB_D)
             @sprite_x += @sprite_vel
         end
-        if Gosu.button_down?(Gosu::KB_UP)
+        if Gosu.button_down?(Gosu::KB_UP) or Gosu.button_down?(Gosu::KB_W)
             @sprite_y -= @sprite_vel
         end
-        if Gosu.button_down?(Gosu::KB_DOWN)
+        if Gosu.button_down?(Gosu::KB_DOWN) or Gosu.button_down?(Gosu::KB_S)
             @sprite_y += @sprite_vel
         end
     end
